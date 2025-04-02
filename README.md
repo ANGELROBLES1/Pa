@@ -6,67 +6,80 @@
 
 # * Informe Técnico * 
 # * Controlador *
-InventoryController - Sistema de Gestión de Inventario
+# InventoryController - Sistema de Gestión de Inventario
+
 Este módulo gestiona el inventario de productos mediante una lista mutable. Permite agregar, actualizar, eliminar y consultar productos, además de calcular el total con IVA.
 
-📌 Funcionalidades
-Agregar productos: Permite añadir un nuevo producto al inventario.
+## 📌 Funcionalidades
 
-Obtener productos: Lista todos los productos almacenados.
+1. **Agregar productos**: Permite añadir un nuevo producto al inventario.
+2. **Obtener productos**: Lista todos los productos almacenados.
+3. **Verificar existencia**: Comprueba si un producto existe en el inventario mediante su ID.
+4. **Actualizar productos**: Modifica el nombre, cantidad y precio de un producto existente.
+5. **Eliminar productos**: Elimina un producto del inventario usando su ID.
+6. **Calcular total con IVA**: Calcula el precio total de un producto incluyendo el 19% de IVA.
 
-Verificar existencia: Comprueba si un producto existe en el inventario mediante su ID.
+## 🛠️ Métodos y Uso
 
-Actualizar productos: Modifica el nombre, cantidad y precio de un producto existente.
-
-Eliminar productos: Elimina un producto del inventario usando su ID.
-
-Calcular total con IVA: Calcula el precio total de un producto incluyendo el 19% de IVA.
-
-🛠️ Métodos y Uso
-addProduct(product: Product)
+### `addProduct(product: Product)`
 Agrega un nuevo producto a la lista de inventario.
 
-Parámetros:
+- **Parámetros**:
+  - `product`: Producto a agregar.
 
-product: Producto a agregar.
-
-getProducts(): List<Product>
+### `getProducts(): List<Product>`
 Devuelve una lista con todos los productos registrados.
 
-productExists(id: Int): Boolean
+### `productExists(id: Int): Boolean`
 Verifica si un producto con un ID específico existe en el inventario.
 
-Parámetros:
+- **Parámetros**:
+  - `id`: Identificador del producto.
 
-id: Identificador del producto.
+- **Retorna**: `true` si el producto existe, `false` si no.
 
-Retorna: true si el producto existe, false si no.
-
-updateProduct(id: Int, name: String, quantity: Int, price: Double)
+### `updateProduct(id: Int, name: String, quantity: Int, price: Double)`
 Actualiza los atributos de un producto si este existe.
 
-Parámetros:
+- **Parámetros**:
+  - `id`: Identificador del producto.
+  - `name`: Nuevo nombre del producto.
+  - `quantity`: Nueva cantidad disponible.
+  - `price`: Nuevo precio unitario.
 
-id: Identificador del producto.
-
-name: Nuevo nombre del producto.
-
-quantity: Nueva cantidad disponible.
-
-price: Nuevo precio unitario.
-
-deleteProduct(id: Int)
+### `deleteProduct(id: Int)`
 Elimina un producto del inventario por su ID.
 
-Parámetros:
+- **Parámetros**:
+  - `id`: Identificador del producto.
 
-id: Identificador del producto.
-
-calculateTotalWithIVA(id: Int)
+### `calculateTotalWithIVA(id: Int)`
 Calcula el total de un producto con IVA del 19%.
 
-Parámetros:
+- **Parámetros**:
+  - `id`: Identificador del producto.
 
-id: Identificador del producto.
+- **Salida**: Imprime en consola el total con IVA.
 
-Salida: Imprime en consola el total con IVA.
+## 🚀 Ejemplo de Uso
+
+```kotlin
+fun main() {
+    val controller = InventoryController()
+    
+    // Agregar productos
+    val product1 = Product(1, "Laptop", 5, 1200.0)
+    controller.addProduct(product1)
+
+    // Listar productos
+    println(controller.getProducts())
+
+    // Actualizar un producto
+    controller.updateProduct(1, "Laptop Gamer", 3, 1500.0)
+
+    // Calcular total con IVA
+    controller.calculateTotalWithIVA(1)
+
+    // Eliminar un producto
+    controller.deleteProduct(1)
+}
