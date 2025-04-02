@@ -1,4 +1,4 @@
-#    * Gestion de inventarios Kotline - Paradigmas de Programacion (2025-1) *
+#    * Gestion de inventarios Kotlin - Paradigmas de Programacion (2025-1) *
 
 - **Nombres:** Julian Caro, Angel Robles
 - **Codigos:** 
