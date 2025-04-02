@@ -61,25 +61,3 @@ Calcula el total de un producto con IVA del 19%.
 
 - **Salida**: Imprime en consola el total con IVA.
 
-## 🚀 Ejemplo de Uso
-
-```kotlin
-fun main() {
-    val controller = InventoryController()
-    
-    // Agregar productos
-    val product1 = Product(1, "Laptop", 5, 1200.0)
-    controller.addProduct(product1)
-
-    // Listar productos
-    println(controller.getProducts())
-
-    // Actualizar un producto
-    controller.updateProduct(1, "Laptop Gamer", 3, 1500.0)
-
-    // Calcular total con IVA
-    controller.calculateTotalWithIVA(1)
-
-    // Eliminar un producto
-    controller.deleteProduct(1)
-}
